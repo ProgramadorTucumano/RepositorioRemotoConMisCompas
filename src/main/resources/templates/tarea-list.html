@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html layout:decorate="~{layout}">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <main layout:fragment="main">
+            <table class="table my-2">
+                <thead>
+                    <tr class="table-dark">
+                        <th>N°</th>
+                        <th>Cotenido</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-dark" th:each=" pepe, roberto : ${tareas} ">
+                        <td th:text="${roberto.count}">1</td>
+                        <td th:text="${pepe.contenido}">Hola</td>
+                        <td>
+                            <a th:href="@{/tarea/form(tareaId=${pepe.id})}"><button class="btn btn-info">Editar</button></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </body>
+</html>
